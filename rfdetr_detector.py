@@ -23,10 +23,5 @@ class RFDETRDetector:
         dets = self.model.predict(rgb, threshold=self.conf)
         if len(dets) == 0:
             return sv.Detections.empty()
-        class_ids = np.asarray(dets.class_id, dtype=int) - self.class_offset
-        return dets[class_ids >= 0] if (class_ids < 0).any() else _with_ids(dets, class_ids)
-
-
-def _with_ids(dets, class_ids):
-    dets.class_id = class_ids
-    return dets
+        dets.class_id = np.asarray(dets.class_id, dtype=int) - self.class_offset
+        return dets[dets.class_id >= 0]
