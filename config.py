@@ -19,7 +19,6 @@ REJECT_CLASS_ID = len(COLOR_CLASSES)
 RFDETR_WEIGHTS_PATH = "models/rfdetr_base_checkpoint.pth"
 RFDETR_NUM_CLASSES = len(COLOR_CLASSES)
 # PatchCore: TensorRT engine
-
 PATCHCORE_ENGINE_PATH = "models/patchcore.engine"
 RFDETR_INPUT_SIZE = 560           # square input, pixels
 RFDETR_CONF_THRESHOLD = 0.5

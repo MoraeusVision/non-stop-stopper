@@ -11,5 +11,5 @@ Edit `config.py` (model paths, GPIO pins, inspection zone, 7 trigger lines), the
     python main.py            # q / Esc closes the calibration window
     python main.py --no-gpio  # dry run, prints valve events
 
-Modules: `camera.py`, `rfdetr_detector.py`, `patchcore_detector.py`, (PatchCore TensorRT wrapper inside),
+Modules: `camera.py`, `rfdetr_detector.py`, `patchcore_detector.py` (contains the TensorRT wrapper),
 `export_rfdetr_trt.py` (optional TensorRT export), `geometry.py`, `valves.py`, `visualizer.py`, `main.py`.
