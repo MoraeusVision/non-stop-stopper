@@ -1,0 +1,8 @@
+numpy
+opencv-python
+supervision>=0.21.0
+rfdetr
+# Jetson only (install via JetPack / pip on device):
+# Jetson.GPIO
+# tensorrt
+# pycuda
