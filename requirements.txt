@@ -2,6 +2,7 @@ numpy
 opencv-python
 supervision>=0.21.0
 rfdetr
+flask
 # Jetson only (install via JetPack / pip on device):
 # Jetson.GPIO
 # tensorrt

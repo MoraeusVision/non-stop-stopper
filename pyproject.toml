@@ -1,0 +1,17 @@
+[project]
+name = "non-stop-stopper"
+version = "0.1.0"
+description = "Non-Stop candy sorter (camera -> RF-DETR -> PatchCore -> GPIO valves)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy",
+    "opencv-python",
+    "supervision>=0.21.0",
+    "rfdetr",
+    "flask",
+]
+
+[project.optional-dependencies]
+# Jetson only (TensorRT/pycuda normally come from JetPack)
+jetson = ["Jetson.GPIO", "pycuda"]
