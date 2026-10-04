@@ -1,7 +1,7 @@
 # non-stop-stopper
 Sorts Non-Stop candy by colour and removes defective ones (Jetson Orin Nano).
 
-Pipeline: camera -> RF-DETR (`rfdetr` RFDETRBase) -> PatchCore (TensorRT) on candies in the
+Pipeline: camera -> RF-DETR (`rfdetr` TensorRT engine) -> PatchCore (TensorRT) on candies in the
 inspection zone (anomaly => `reject`) -> `supervision` line crossing -> GPIO valve pulse.
 
 ## Setup
@@ -12,4 +12,4 @@ Edit `config.py` (model paths, GPIO pins, inspection zone, 7 trigger lines), the
     python main.py --no-gpio  # dry run, prints valve events
 
 Modules: `camera.py`, `rfdetr_detector.py`, `patchcore_detector.py` (contains the TensorRT wrapper),
-`export_rfdetr_trt.py` (optional TensorRT export), `geometry.py`, `valves.py`, `visualizer.py`, `main.py`.
+`export_rfdetr_trt.py` (builds the RF-DETR engine; also run automatically if the engine is missing), `geometry.py`, `valves.py`, `visualizer.py`, `main.py`.

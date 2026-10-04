@@ -71,7 +71,7 @@ def main():
     from valves import DummyValveController, ValveController
 
     detector = RFDETRDetector(
-        config.RFDETR_WEIGHTS_PATH, config.RFDETR_NUM_CLASSES, config.RFDETR_INPUT_SIZE,
+        config.RFDETR_ENGINE_PATH, config.RFDETR_WEIGHTS_PATH, config.RFDETR_NUM_CLASSES, config.RFDETR_INPUT_SIZE,
         config.RFDETR_CONF_THRESHOLD, config.RFDETR_CLASS_OFFSET,
     )
     anomaly = PatchCoreDetector(
