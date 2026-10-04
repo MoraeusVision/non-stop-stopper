@@ -14,7 +14,8 @@ CLASS_NAMES = COLOR_CLASSES + [REJECT_CLASS_NAME]
 REJECT_CLASS_ID = len(COLOR_CLASSES)
 
 # --- Models ---
-# RF-DETR: fine-tuned RFDETRBase checkpoint (.pth) loaded via the `rfdetr` package.
+# RF-DETR: fine-tuned RFDETRBase checkpoint (.pth) loaded directly by the `rfdetr` package (no PyCUDA).
+# (rfdetr loads .pth checkpoints only; export_rfdetr_trt.py can build a .trt engine separately.)
 RFDETR_WEIGHTS_PATH = "models/rfdetr_base_checkpoint.pth"
 RFDETR_NUM_CLASSES = len(COLOR_CLASSES)
 # PatchCore: TensorRT engine
