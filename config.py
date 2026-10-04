@@ -13,12 +13,16 @@ REJECT_CLASS_NAME = "reject"
 CLASS_NAMES = COLOR_CLASSES + [REJECT_CLASS_NAME]
 REJECT_CLASS_ID = len(COLOR_CLASSES)
 
-# --- Models (TensorRT engines) ---
-RFDETR_ENGINE_PATH = "models/rfdetr.engine"
+# --- Models ---
+# RF-DETR: fine-tuned RFDETRBase checkpoint (.pth) loaded via the `rfdetr` package.
+RFDETR_WEIGHTS_PATH = "models/rfdetr_base_checkpoint.pth"
+RFDETR_NUM_CLASSES = len(COLOR_CLASSES)
+# PatchCore: TensorRT engine
+
 PATCHCORE_ENGINE_PATH = "models/patchcore.engine"
 RFDETR_INPUT_SIZE = 560           # square input, pixels
 RFDETR_CONF_THRESHOLD = 0.5
-# Offset subtracted from raw logit class index (1 if the model has a background/COCO-style offset)
+# Offset subtracted from predicted class id (1 if dataset class ids start at 1)
 RFDETR_CLASS_OFFSET = 0
 PATCHCORE_INPUT_SIZE = 224
 PATCHCORE_ANOMALY_THRESHOLD = 0.5  # score above this => defective
